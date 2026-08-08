@@ -29,6 +29,10 @@ function Kontakt() {
         intro="Wimpern- und Augenbrauentermine buchst du online über Treatwell. Für Nägel und Füße erreichst du uns telefonisch im jeweiligen Studio."
       />
 
+      <GoogleRatingSection />
+
+
+
       <section className="shell grid gap-14 border-t pt-12 pb-16 md:grid-cols-2 md:gap-16 md:pb-24">
         {locations.map((loc) => (
           <LocationCard key={loc.id} location={loc} />

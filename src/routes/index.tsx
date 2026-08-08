@@ -38,6 +38,10 @@ function Home() {
     <SiteLayout>
       <Hero />
 
+      <GoogleRatingSection />
+
+
+
       {/* Intro / Trust */}
       <section className="section">
         <div className="shell grid gap-10 md:grid-cols-12 md:gap-16">
