@@ -1,6 +1,6 @@
 import { booking, business, cta } from "@/content/business";
 import { heroImage } from "@/content/media";
-import { ratingSummary } from "@/content/reviews";
+import { googleRating, ratingSummary } from "@/content/reviews";
 import { ActionLink } from "./ActionLink";
 
 export function Hero() {

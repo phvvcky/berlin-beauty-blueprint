@@ -52,11 +52,12 @@ function Home() {
             </p>
             <ul className="mt-10 grid gap-px border-t sm:grid-cols-3">
               <li className="border-b py-5 sm:border-b-0 sm:pr-6">
-                <p className="font-display text-4xl">4,8</p>
+                <p className="font-display text-4xl">{googleRating.score}</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  677 Bewertungen · Treatwell
+                  {googleRating.countLabel} Bewertungen · Google
                 </p>
               </li>
+
               <li className="border-b py-5 sm:border-b-0 sm:px-6">
                 <p className="font-display text-4xl">2</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
