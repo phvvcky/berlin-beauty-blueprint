@@ -6,8 +6,10 @@ import { ReviewsSection } from "@/components/site/ReviewsSection";
 import { LocationCard } from "@/components/site/LocationCard";
 import { InstagramSection } from "@/components/site/InstagramSection";
 import { BookingCTA } from "@/components/site/BookingCTA";
+import { GoogleRatingSection } from "@/components/site/GoogleRatingSection";
 import { ActionLink } from "@/components/site/ActionLink";
 import { business, locations } from "@/content/business";
+import { googleRating } from "@/content/reviews";
 import { serviceCategories, featuredCategoryIds } from "@/content/services";
 import { featuredGallery, studioImages } from "@/content/media";
 import { localBusinessSchema, pageMeta } from "@/lib/seo";
@@ -36,6 +38,10 @@ function Home() {
     <SiteLayout>
       <Hero />
 
+      <GoogleRatingSection />
+
+
+
       {/* Intro / Trust */}
       <section className="section">
         <div className="shell grid gap-10 md:grid-cols-12 md:gap-16">
@@ -52,11 +58,12 @@ function Home() {
             </p>
             <ul className="mt-10 grid gap-px border-t sm:grid-cols-3">
               <li className="border-b py-5 sm:border-b-0 sm:pr-6">
-                <p className="font-display text-4xl">4,8</p>
+                <p className="font-display text-4xl">{googleRating.score}</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  677 Bewertungen · Treatwell
+                  {googleRating.countLabel} Bewertungen · Google
                 </p>
               </li>
+
               <li className="border-b py-5 sm:border-b-0 sm:px-6">
                 <p className="font-display text-4xl">2</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">

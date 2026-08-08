@@ -1,8 +1,15 @@
 /**
  * BILDER — zum Austauschen einfach die Dateien in src/assets/ ersetzen
  * (gleicher Dateiname) oder hier neue Importe eintragen.
+ *
+ * ECHTE FOTOS EINPFLEGEN:
+ * 1. Originalfotos (Instagram/Google Business) als .jpg nach src/assets/ legen
+ *    – z. B. work-01.jpg … work-08.jpg, studio-01.jpg, hero.jpg überschreiben.
+ * 2. Alt-Text, width und height im jeweiligen Eintrag unten anpassen.
+ * 3. Reihenfolge/Auswahl steuern `featuredGallery` und `instagramGallery`.
  * Aktuell: hochwertige Platzhalter-Motive, keine Originalfotos von Angel Nails.
  */
+
 
 import hero from "@/assets/hero.jpg";
 import work01 from "@/assets/work-01.jpg";

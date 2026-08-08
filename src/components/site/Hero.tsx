@@ -1,6 +1,6 @@
 import { booking, business, cta } from "@/content/business";
 import { heroImage } from "@/content/media";
-import { ratingSummary } from "@/content/reviews";
+import { googleRating, ratingSummary } from "@/content/reviews";
 import { ActionLink } from "./ActionLink";
 
 export function Hero() {
@@ -30,18 +30,32 @@ export function Hero() {
             </ActionLink>
           </div>
 
-          <p className="mt-10 text-sm text-muted-foreground">
-            <span className="font-display text-2xl text-foreground">{ratingSummary.score}</span>{" "}
-            aus {ratingSummary.count} Bewertungen ·{" "}
-            <a
-              href={ratingSummary.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-underline"
-            >
-              {ratingSummary.source}
-            </a>
-          </p>
+          <div className="mt-10 flex flex-col gap-2 text-sm text-muted-foreground">
+            <p>
+              <span className="font-display text-2xl text-foreground">{googleRating.score}</span>{" "}
+              <span aria-hidden className="text-clay">★★★★★</span> · {googleRating.countLabel}{" "}
+              <a
+                href={googleRating.reviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-underline"
+              >
+                Google Bewertungen
+              </a>
+            </p>
+            <p>
+              {ratingSummary.score} aus {ratingSummary.count} Bewertungen ·{" "}
+              <a
+                href={ratingSummary.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-underline"
+              >
+                {ratingSummary.source}
+              </a>
+            </p>
+          </div>
+
         </div>
 
         <div className="md:col-span-5 lg:col-span-6">
