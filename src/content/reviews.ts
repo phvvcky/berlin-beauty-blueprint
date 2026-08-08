@@ -14,6 +14,24 @@ export const ratingSummary = {
   location: "Studio Prenzlauer Berg",
 };
 
+/**
+ * GOOGLE — Angel Nails Google Business Profil.
+ * Werte pflegst du hier zentral; Links zeigen auf das Maps-Profil.
+ */
+export const googleRating = {
+  score: "4,9",
+  scoreValue: 4.9,
+  countLabel: "1.400+",
+  source: "Google",
+  /** Bewertungen lesen */
+  reviewsUrl:
+    "https://www.google.com/maps/place/Angel+Nails+Nagelstudio+Berlin+Prenzlauer+Berg/@52.5345841,13.4331239,17z",
+  /** Bewertung abgeben (öffnet das Google-Profil, dort „Rezension schreiben“) */
+  writeReviewUrl:
+    "https://www.google.com/maps/search/?api=1&query=Angel%20Nails%20Nagelstudio%20Danziger%20Stra%C3%9Fe%20142%20Berlin",
+};
+
+
 export type Review = {
   text: string;
   author: string;
