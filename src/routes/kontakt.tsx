@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { PageHeader } from "@/components/site/PageHeader";
 import { LocationCard } from "@/components/site/LocationCard";
 import { BookingCTA } from "@/components/site/BookingCTA";
+import { GoogleRatingSection } from "@/components/site/GoogleRatingSection";
 import { business, booking, locations } from "@/content/business";
 import { localBusinessSchema, pageMeta } from "@/lib/seo";
 
