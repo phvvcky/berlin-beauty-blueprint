@@ -60,4 +60,5 @@ export const gallery: GalleryImage[] = [
 /** Auswahl für die Startseite */
 export const featuredGallery = gallery.slice(0, 5);
 /** Auswahl für die Instagram-Sektion */
-export const instagramGallery = [gallery[3], gallery[1], gallery[6], gallery[5]];
+export const instagramGallery = gallery.filter((_, i) => [3, 1, 6, 5].includes(i));
+

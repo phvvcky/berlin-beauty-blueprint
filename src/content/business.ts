@@ -112,7 +112,9 @@ export const booking = {
   /** Für Nägel & Füße wird laut myangelnails.de per Terminanfrage/Telefon gebucht. */
   nailsNote:
     "Termine für Nägel und Füße bitte telefonisch im gewünschten Studio anfragen.",
-  defaultUrl: locations[0].bookingUrl,
+  defaultUrl:
+    "https://buchung.treatwell.de/ort/angel-nails-nagelstudio-lashes-berlin-prenzlauer-berg/",
+
 } as const;
 
 export const team = {
