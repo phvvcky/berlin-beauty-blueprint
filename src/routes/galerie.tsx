@@ -21,7 +21,7 @@ function Galerie() {
       <PageHeader
         eyebrow="Portfolio"
         title="Galerie"
-        intro="Ein Eindruck von Formen, Farben und Techniken. Die Motive dienen aktuell als Platzhalter und werden durch Originalfotos aus dem Studio ersetzt."
+        intro="Ein Eindruck von unseren Studioräumen in der Danziger Straße 142 sowie von Formen, Farben und Techniken aus dem Salonalltag."
       />
       <div className="shell pb-16 md:pb-24">
         <GalleryGrid images={gallery} />
