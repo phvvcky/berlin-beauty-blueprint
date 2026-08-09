@@ -20,8 +20,11 @@ import work05 from "@/assets/work-05.jpg";
 import work06 from "@/assets/work-06.jpg";
 import work07 from "@/assets/work-07.jpg";
 import work08 from "@/assets/work-08.jpg";
-import studio01 from "@/assets/studio-01.jpg";
-import studio02 from "@/assets/studio-02.jpg";
+/** Echte Studiofotos (Quelle: Treatwell-Salonprofil Angel Nails Prenzlauer Berg). */
+import studioFront from "@/assets/studio-front.jpg";
+import studioReal01 from "@/assets/studio-real-01.jpg";
+import studioReal02 from "@/assets/studio-real-02.jpg";
+import studioReal03 from "@/assets/studio-real-03.jpg";
 
 export type GalleryImage = {
   src: string;
