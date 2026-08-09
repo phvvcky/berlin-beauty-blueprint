@@ -41,28 +41,45 @@ export const heroImage: GalleryImage = {
   height: 1920,
 };
 
+/** Echte Fotos aus dem Studio Prenzlauer Berg (Quelle: Treatwell-Salonprofil). */
 export const studioImages: GalleryImage[] = [
   {
-    src: studio01,
-    alt: "Heller Maniküre-Arbeitsplatz mit Holztisch und ruhiger, warmer Einrichtung",
-    width: 1408,
-    height: 1008,
+    src: studioReal01,
+    alt: "Heller Salonraum von Angel Nails Prenzlauer Berg mit weißen Maniküre-Arbeitsplätzen",
+    width: 1080,
+    height: 720,
   },
   {
-    src: studio02,
-    alt: "Regal mit Nagellackflaschen in Nude- und Brauntönen im Studio",
-    width: 1400,
-    height: 1000,
+    src: studioReal02,
+    alt: "Blick durch den Studioraum von Angel Nails mit Marmorboden und goldenen Absperrungen",
+    width: 1080,
+    height: 720,
+  },
+  {
+    src: studioReal03,
+    alt: "Arbeitsplätze mit Lampen und Spiegeln im Studio Angel Nails Prenzlauer Berg",
+    width: 1080,
+    height: 720,
+  },
+  {
+    src: studioFront,
+    alt: "Eingang und Schaufenster von Angel Nails in der Danziger Straße 142 in Berlin",
+    width: 1080,
+    height: 720,
   },
 ];
 
 export const gallery: GalleryImage[] = [
+  { src: studioReal01, alt: "Heller Salonraum von Angel Nails Prenzlauer Berg mit weißen Maniküre-Arbeitsplätzen", width: 1080, height: 720, caption: "Studio Prenzlauer Berg" },
   { src: work01, alt: "Milchig-weiße Gelnägel in ovaler Form", width: 900, height: 1200, caption: "Gel · Milky White" },
   { src: work02, alt: "Nahaufnahme eines Auges mit Wimpernverlängerung in Volumentechnik", width: 1200, height: 900, caption: "Wimpern · Volumen" },
+  { src: studioReal02, alt: "Blick durch den Studioraum von Angel Nails mit Marmorboden und goldenen Absperrungen", width: 1080, height: 720, caption: "Salonraum" },
   { src: work03, alt: "Hände mit dunkelbrauner Farbgel-Maniküre halten eine Tasse", width: 900, height: 1200, caption: "Farbgel · Espresso" },
   { src: work04, alt: "Detailaufnahme glänzender Nägel in warmem Nude-Ton", width: 900, height: 1200, caption: "Maniküre · Nude" },
+  { src: studioReal03, alt: "Arbeitsplätze mit Lampen und Spiegeln im Studio Angel Nails Prenzlauer Berg", width: 1080, height: 720, caption: "Arbeitsplätze" },
   { src: work05, alt: "Pflegeprodukte und Handtuch als Sinnbild für Pediküre und Fußpflege", width: 1200, height: 900, caption: "Pediküre · Pflege" },
   { src: work06, alt: "Lange Stiletto-Nägel in dunklem Espressobraun mit Hochglanz", width: 900, height: 1200, caption: "Modellage · Stiletto" },
+  { src: studioFront, alt: "Eingang und Schaufenster von Angel Nails in der Danziger Straße 142 in Berlin", width: 1080, height: 720, caption: "Danziger Straße 142" },
   { src: work07, alt: "Hände mit zartem Flieder-Farbgel auf Marmor", width: 900, height: 1200, caption: "Farbgel · Lilac" },
   { src: work08, alt: "Nageldesignerin arbeitet konzentriert an der Maniküre einer Kundin", width: 1000, height: 1000, caption: "Im Studio" },
 ];
