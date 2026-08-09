@@ -42,17 +42,17 @@ export type Review = {
 
 export const reviews: Review[] = [
   {
-    text: "Ich gehe seit 5 Jahren zu Angel Nails um meine Wimpern sowie meine Nägel machen zu lassen und ich bin jedes Mal super happy mit dem Ergebnis.",
-    author: "Lætizia",
-    treatment: "Wimpernverlängerung",
-    stylist: "Nhi",
-    source: "Verifizierte Bewertung · Treatwell",
-  },
-  {
     text: "Wieder eine hervorragende Arbeit. Hält gute 4 Wochen und länger.",
     author: "Annette",
     treatment: "Wimpernverlängerung",
     stylist: "Hang",
+    source: "Verifizierte Bewertung · Treatwell",
+  },
+  {
+    text: "Ich gehe seit 5 Jahren zu Angel Nails, um meine Wimpern sowie meine Nägel machen zu lassen, und ich bin jedes Mal super happy mit dem Ergebnis.",
+    author: "Lætizia",
+    treatment: "Wimpernverlängerung",
+    stylist: "Nhi",
     source: "Verifizierte Bewertung · Treatwell",
   },
   {
@@ -62,4 +62,20 @@ export const reviews: Review[] = [
     stylist: "Hang",
     source: "Verifizierte Bewertung · Treatwell",
   },
+  {
+    text: "Alles super gewesen, vielen lieben Dank.",
+    author: "Maria",
+    treatment: "Wimpernverlängerung",
+    stylist: "Hang",
+    source: "Verifizierte Bewertung · Treatwell",
+  },
+];
+
+/** Verteilung der 677 Treatwell-Bewertungen (5★ → 1★). */
+export const ratingBreakdown = [402, 66, 12, 10, 8];
+
+/** Behandlungs-Scores laut Treatwell-Profil. */
+export const treatmentScores = [
+  { label: "Wimpernverlängerung", score: "4,8" },
+  { label: "Wimpernwelle", score: "4,1" },
 ];
