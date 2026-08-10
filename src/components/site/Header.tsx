@@ -8,6 +8,7 @@ export const navItems = [
   { to: "/", label: "Start" },
   { to: "/leistungen", label: "Leistungen" },
   { to: "/galerie", label: "Galerie" },
+  { to: "/team", label: "Team" },
   { to: "/studio", label: "Studio" },
   { to: "/kontakt", label: "Kontakt" },
 ];
