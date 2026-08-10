@@ -11,7 +11,6 @@
  */
 
 
-import hero from "@/assets/hero.jpg";
 import work05 from "@/assets/work-05.jpg";
 /** Echte Arbeits- und Studiofotos (Quelle: myangelnails.de / Angel Nails). */
 import nailsReal01 from "@/assets/nails-real-01.jpg";
