@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { PageHeader } from "@/components/site/PageHeader";
 import { BookingCTA } from "@/components/site/BookingCTA";
-import { TeamGrid } from "@/components/site/TeamGrid";
+
 import { business, locations } from "@/content/business";
 
 import { studioImages } from "@/content/media";
