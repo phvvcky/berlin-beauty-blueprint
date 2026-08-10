@@ -12,14 +12,12 @@
 
 
 import hero from "@/assets/hero.jpg";
-import work01 from "@/assets/work-01.jpg";
-import work02 from "@/assets/work-02.jpg";
-import work03 from "@/assets/work-03.jpg";
-import work04 from "@/assets/work-04.jpg";
 import work05 from "@/assets/work-05.jpg";
-import work06 from "@/assets/work-06.jpg";
-import work07 from "@/assets/work-07.jpg";
-import work08 from "@/assets/work-08.jpg";
+/** Echte Arbeits- und Studiofotos (Quelle: myangelnails.de / Angel Nails). */
+import nailsReal01 from "@/assets/nails-real-01.jpg";
+import nailsReal02 from "@/assets/nails-real-02.jpg";
+import nailsReal03 from "@/assets/nails-real-03.jpg";
+import studioSign from "@/assets/studio-sign.jpg";
 /** Echte Studiofotos (Quelle: Treatwell-Salonprofil Angel Nails Prenzlauer Berg). */
 import studioFront from "@/assets/studio-front.jpg";
 import studioReal01 from "@/assets/studio-real-01.jpg";
