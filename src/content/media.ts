@@ -60,6 +60,12 @@ export const studioImages: GalleryImage[] = [
     height: 720,
   },
   {
+    src: studioSign,
+    alt: "Angel Nails Schriftzug mit Flügel-Logo im Studio Prenzlauer Berg",
+    width: 1200,
+    height: 1600,
+  },
+  {
     src: studioFront,
     alt: "Eingang und Schaufenster von Angel Nails in der Danziger Straße 142 in Berlin",
     width: 1080,
