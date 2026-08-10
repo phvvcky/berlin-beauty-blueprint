@@ -117,13 +117,22 @@ export const booking = {
 
 } as const;
 
+import teamNhi from "@/assets/team-nhi.png";
+import teamHang from "@/assets/team-hang.png";
+import teamLoan from "@/assets/team-loan.png";
+import teamHana from "@/assets/team-hana.png";
+
 export const team = {
   /** Quelle: Treatwell Salonprofil Prenzlauer Berg */
   members: [
-    { name: "Nhi", rating: "4,9", reviews: 194 },
-    { name: "Hang", rating: "4,8", reviews: 145 },
-    { name: "Loan", rating: "4,8", reviews: 87 },
-    { name: "Hana", rating: "4,7", reviews: 46 },
+    { name: "Nhi", rating: "4,9", reviews: 194, portrait: teamNhi },
+    { name: "Hang", rating: "4,8", reviews: 145, portrait: teamHang },
+    { name: "Loan", rating: "4,8", reviews: 87, portrait: teamLoan },
+    { name: "Hana", rating: "4,7", reviews: 46, portrait: teamHana },
   ],
   source: "Treatwell",
+  /** Die Porträts sind gezeichnete Illustrationen, keine Fotos. */
+  portraitNote:
+    "Die Porträts sind gezeichnete Illustrationen im Karikatur-Stil — keine Fotos.",
 } as const;
+
