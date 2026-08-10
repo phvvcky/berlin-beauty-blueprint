@@ -11,7 +11,7 @@
  */
 
 
-import work05 from "@/assets/work-05.jpg";
+
 /** Echte Arbeits- und Studiofotos (Quelle: myangelnails.de / Angel Nails). */
 import nailsReal01 from "@/assets/nails-real-01.jpg";
 import nailsReal02 from "@/assets/nails-real-02.jpg";
@@ -81,7 +81,7 @@ export const gallery: GalleryImage[] = [
   { src: nailsReal03, alt: "French-Modellage mit rosa Herz-Nailart von Angel Nails", width: 1200, height: 1600, caption: "Nailart · Herz French" },
   { src: studioSign, alt: "Angel Nails Schriftzug mit Flügel-Logo im Studio Prenzlauer Berg", width: 1200, height: 1600, caption: "Angel Nails" },
   { src: studioReal03, alt: "Arbeitsplätze mit Lampen und Spiegeln im Studio Angel Nails Prenzlauer Berg", width: 1080, height: 720, caption: "Arbeitsplätze" },
-  { src: work05, alt: "Pflegeprodukte und Handtuch als Sinnbild für Pediküre und Fußpflege", width: 1200, height: 900, caption: "Pediküre · Pflege" },
+  
   { src: studioFront, alt: "Eingang und Schaufenster von Angel Nails in der Danziger Straße 142 in Berlin", width: 1080, height: 720, caption: "Danziger Straße 142" },
 ];
 
