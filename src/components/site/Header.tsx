@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { business, cta, booking } from "@/content/business";
 import { ActionLink } from "./ActionLink";
+import logo from "@/assets/logo.png";
 
 export const navItems = [
   { to: "/", label: "Start" },
@@ -36,11 +37,20 @@ export function Header() {
       }`}
     >
       <div className="shell flex h-[70px] items-center justify-between md:h-[86px]">
-        <Link to="/" className="flex flex-col leading-none" aria-label={`${business.name} Startseite`}>
-          <span className="font-display text-2xl tracking-tight md:text-[1.75rem]">
-            {business.name}
+        <Link to="/" className="flex items-center gap-3" aria-label={`${business.name} Startseite`}>
+          <img
+            src={logo}
+            alt={`${business.name} Logo`}
+            width={512}
+            height={512}
+            className="h-10 w-10 md:h-12 md:w-12"
+          />
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-2xl tracking-tight md:text-[1.75rem]">
+              {business.name}
+            </span>
+            <span className="eyebrow mt-1 text-[0.6rem]">Berlin · Hennigsdorf</span>
           </span>
-          <span className="eyebrow mt-1 text-[0.6rem]">Berlin · Hennigsdorf</span>
         </Link>
 
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-9 lg:flex">
