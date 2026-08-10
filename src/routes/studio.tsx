@@ -1,8 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { PageHeader } from "@/components/site/PageHeader";
 import { BookingCTA } from "@/components/site/BookingCTA";
-import { business, team, locations } from "@/content/business";
+
+import { business, locations } from "@/content/business";
+
 import { studioImages } from "@/content/media";
 import { pageMeta } from "@/lib/seo";
 
@@ -37,19 +39,16 @@ function Studio() {
           </p>
 
           <h2 className="display-md mt-14">Team</h2>
-          <p className="mt-3 text-xs text-muted-foreground">
-            Bewertungen je Mitarbeiterin laut {team.source}-Profil Prenzlauer Berg.
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+            Nhi, Hang, Loan und Hana behandeln dich im Studio Prenzlauer Berg.
           </p>
-          <ul className="mt-8 grid gap-px border-t sm:grid-cols-2">
-            {team.members.map((member) => (
-              <li key={member.name} className="border-b py-6 sm:odd:pr-8 sm:even:pl-8">
-                <p className="font-display text-3xl">{member.name}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  {member.rating} · {member.reviews} Bewertungen
-                </p>
-              </li>
-            ))}
-          </ul>
+          <Link
+            to="/team"
+            className="link-underline mt-4 inline-block text-xs uppercase tracking-[0.2em]"
+          >
+            Team kennenlernen
+          </Link>
+
 
           <h2 className="display-md mt-14">Gut zu wissen</h2>
           <ul className="mt-6 space-y-2 text-sm text-muted-foreground">

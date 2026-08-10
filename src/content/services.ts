@@ -1,7 +1,7 @@
 /**
  * SERVICE DATA
- * Preise: verifiziert über Treatwell (Studio Prenzlauer Berg).
- * Für Nagel- und Fußpflege liegen öffentlich keine Preise vor -> "Preis auf Anfrage".
+ * Preise: offizielle Preislisten "Angel Nails" & "Angel Lashes" (myangelnails.de, Stand 2024).
+ * Keine geschätzten oder erfundenen Preise.
  */
 
 export type Service = {
@@ -21,91 +21,115 @@ export type ServiceCategory = {
 };
 
 export const priceSourceNote =
-  "Preise laut Treatwell-Profil Studio Prenzlauer Berg. Änderungen vorbehalten — Preise im Studio können abweichen.";
+  "Preise laut offizieller Preisliste von Angel Nails & Angel Lashes. Änderungen vorbehalten — Zahlung ausschließlich in bar.";
 
 export const serviceCategories: ServiceCategory[] = [
   {
     id: "naegel",
-    title: "Maniküre & Nagelmodellage",
+    title: "Nail Services",
     intro:
-      "Klassische Pflege, Gel- und Acrylmodellage, Auffüllen und Neuanlage — abgestimmt auf deine Nagelform.",
-    note: "Preise auf Anfrage — für Nägel und Füße sind online keine verbindlichen Preise hinterlegt.",
+      "Maniküre, Neumodellage und Auffüllen — in Natur, French, Babyboomer oder farbigem Verlauf.",
+    note: "Neumodellage = du kommst mit Naturnägeln. Auffüllen = du kommst mit bestehender Modellage.",
     services: [
+      { name: "Maniküre", price: "10 €" },
+      { name: "Neumodellage Natur", description: "Nudefarbe.", price: "33 €" },
       {
-        name: "Maniküre",
-        description: "Formen, Nagelhautpflege, Politur.",
-        price: "Preis auf Anfrage",
+        name: "Neumodellage Natur mit French",
+        description: "Freie Farbauswahl.",
+        price: "43 €",
+      },
+      { name: "Neumodellage Farbe / Babyboomer", price: "38 €" },
+      {
+        name: "Neumodellage farbiger Verlauf (Ombré)",
+        description: "Airbrush oder farbiges Pulver.",
+        price: "43 €",
       },
       {
-        name: "Nagelmodellage — Neuanlage",
-        description: "Gel oder Acryl, individuelle Länge und Form.",
-        price: "Preis auf Anfrage",
+        name: "Ablösen der alten Modellage und alles neu",
+        price: "+5 €",
       },
+      { name: "Auffüllen Natur", description: "Nudefarbe.", price: "30 €" },
+      { name: "Auffüllen Natur mit French", price: "40 €" },
+      { name: "Auffüllen Farbe / Babyboomer", price: "35 €" },
       {
-        name: "Auffüllen",
-        description: "Auffüllen einer bestehenden Modellage.",
-        price: "Preis auf Anfrage",
-      },
-      {
-        name: "Shellac / Farbgel",
-        description: "Langhaltende Farbe auf dem Naturnagel.",
-        price: "Preis auf Anfrage",
-      },
-      {
-        name: "Nail Art & Design",
-        description: "French, Chrome, Ombré, Steinchen und freie Designs.",
-        price: "Preis auf Anfrage",
+        name: "Auffüllen farbiger Verlauf (Ombré)",
+        description: "Airbrush oder farbiges Pulver.",
+        price: "40 €",
       },
     ],
   },
   {
     id: "fuesse",
-    title: "Pediküre & Fußpflege",
-    intro: "Gepflegte Füße — klassisch oder mit langhaltender Farbe.",
-    note: "Preise auf Anfrage.",
+    title: "Feet Services",
+    intro: "Pediküre klassisch, mit Gel-Farbe oder mit Zehenmodellage.",
     services: [
-      { name: "Pediküre", description: "Fußbad, Nagelpflege, Hornhaut.", price: "Preis auf Anfrage" },
-      { name: "Pediküre mit Farbgel", price: "Preis auf Anfrage" },
+      { name: "Pediküre", price: "25 €" },
+      { name: "Pediküre mit Gel-Farbe", description: "Ohne Aufbau.", price: "40 €" },
+      {
+        name: "Pediküre mit Zehenmodellage",
+        description: "Farbe / Babyboomer / French — neu oder auffüllen.",
+        price: "55 €",
+      },
+      { name: "Neu Zehenmodellage Natur", description: "Nudefarbe.", price: "35 €" },
+      { name: "Neu Zehenmodellage Natur mit French", price: "40 €" },
+      { name: "Neu Zehenmodellage Farbe / Babyboomer", price: "40 €" },
+      { name: "Neu nur Gelfarbe ohne Modellage", price: "30 €" },
+      { name: "Auffüllen Zehenmodellage Natur", description: "Nudefarbe.", price: "30 €" },
+      { name: "Auffüllen Zehenmodellage Natur mit French", price: "35 €" },
+      { name: "Auffüllen Farbe / Babyboomer", price: "35 €" },
+      { name: "Auffüllen nur Gelfarbe ohne Modellage", price: "30 €" },
     ],
   },
   {
-    id: "wimpern-neuanlage",
-    title: "Wimpernverlängerung — Neuanlage",
+    id: "wimpern-11",
+    title: "Wimpern 1:1 Methode",
     intro:
-      "Von natürlich bis dramatisch: 1:1 Technik für einen dezenten Look, Volumentechnik für mehr Fülle.",
+      "Eine Extension pro Naturwimper — Soft, Medium oder Extrem, je nach gewünschter Intensität.",
+    note: "Nach 4 Wochen und 5 Tagen wird automatisch ein Neuset berechnet. Auffüllen nur möglich, wenn noch mind. 10 % der Extensions vorhanden sind.",
     services: [
-      { name: "1:1 Technik Soft", price: "55 €", duration: "45 Min." },
-      { name: "1:1 Technik Medium", price: "75 €", duration: "1 Std." },
-      { name: "1:1 Technik Extrem", price: "95 €", duration: "1 Std." },
-      { name: "Volumentechnik Angel", price: "65 €", duration: "1 Std. 30 Min." },
-      { name: "Volumentechnik Bad Angel", price: "85 €", duration: "1 Std. 30 Min." },
-      { name: "Volumentechnik Devil", price: "105 €", duration: "2 Std." },
+      { name: "Soft — Neu", price: "55 €" },
+      { name: "Soft — Auffüllen bis 2 / 3 / 4 Wochen", price: "32 / 40 / 48 €" },
+      { name: "Medium — Neu", price: "75 €" },
+      { name: "Medium — Auffüllen bis 2 / 3 / 4 Wochen", price: "40 / 48 / 56 €" },
+      { name: "Extrem — Neu", price: "95 €" },
+      { name: "Extrem — Auffüllen bis 2 / 3 / 4 Wochen", price: "45 / 55 / 65 €" },
     ],
   },
   {
-    id: "wimpern-auffuellen",
-    title: "Wimpern auffüllen",
-    intro:
-      "Preis richtet sich nach dem Abstand zur letzten Behandlung. Angegeben ist der Startpreis bis 2 Wochen.",
+    id: "wimpern-volumen",
+    title: "Wimpern Volumentechnik",
+    intro: "Mehrere feine Extensions pro Naturwimper — Angel, Bad Angel oder Devil.",
+    note: "Fremdarbeiten, die aufgefüllt werden können, werden mit Aufpreis berechnet.",
     services: [
-      { name: "Auffüllen 1:1 Soft", price: "ab 32 €", duration: "40 – 45 Min." },
-      { name: "Auffüllen 1:1 Medium", price: "ab 40 €", duration: "1 Std." },
-      { name: "Auffüllen 1:1 Extrem", price: "ab 45 €", duration: "1 Std." },
-      { name: "Auffüllen Volumen Angel", price: "ab 40 €", duration: "1 – 1,5 Std." },
-      { name: "Auffüllen Volumen Bad Angel", price: "ab 45 €", duration: "1 – 1,5 Std." },
+      { name: "Angel — Neu (2D – 3D)", price: "65 €" },
+      { name: "Angel — Auffüllen bis 2 / 3 / 4 Wochen", price: "40 / 48 / 56 €" },
+      { name: "Bad Angel — Neu (4D – 5D)", price: "85 €" },
+      { name: "Bad Angel — Auffüllen bis 2 / 3 / 4 Wochen", price: "45 / 55 / 65 €" },
+      { name: "Devil — Neu (ab 6D)", price: "105 €" },
+      { name: "Devil — Auffüllen bis 2 / 3 / 4 Wochen", price: "55 / 65 / 75 €" },
     ],
   },
   {
-    id: "augenbrauen",
-    title: "Augenbrauen & Wimpernpflege",
-    intro: "Form, Farbe und Lifting — schnelle Termine mit sichtbarem Effekt.",
+    id: "wimpern-extras",
+    title: "Lifting, Design & Augenbrauen",
+    intro: "Schnelle Termine mit sichtbarem Effekt.",
     services: [
-      { name: "Wimpernlifting inkl. Färben & Keratin", price: "45 €", duration: "1 Std." },
-      { name: "Augenbrauen färben & zupfen", price: "15 €", duration: "15 Min." },
-      { name: "Weitere Augenbrauen- & Wimpernbehandlungen", price: "ab 10 €" },
+      { name: "Wimpern Lifting", description: "Inkl. Färben & Keratin.", price: "40 €" },
+      {
+        name: "Wimpern Design — Neu",
+        description: "Hybrid, Kim K, Wispy — Aufpreis auf das jeweilige Set.",
+        price: "+10 €",
+      },
+      { name: "Wimpern Design — Auffüllen", price: "+5 €" },
+      {
+        name: "Augenbrauen färben & zupfen",
+        description: "Quelle: Treatwell.",
+        price: "15 €",
+        duration: "15 Min.",
+      },
     ],
   },
 ];
 
 /** Auf der Startseite hervorgehobene Kategorien */
-export const featuredCategoryIds = ["naegel", "wimpern-neuanlage", "augenbrauen", "fuesse"];
+export const featuredCategoryIds = ["naegel", "wimpern-11", "wimpern-volumen", "fuesse"];
