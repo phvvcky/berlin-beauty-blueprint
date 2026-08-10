@@ -32,11 +32,12 @@ export type GalleryImage = {
   caption?: string;
 };
 
+/** Echtes Kundenfoto aus dem Studio (Quelle: Angel Nails / myangelnails.de). */
 export const heroImage: GalleryImage = {
-  src: hero,
-  alt: "Hände mit gepflegter Nagelmodellage in Nude-Beige auf hellem Leinen",
-  width: 1600,
-  height: 1920,
+  src: nailsReal01,
+  alt: "Hand mit Babyboomer-Modellage in Rosé-Nude von Angel Nails Berlin",
+  width: 1200,
+  height: 2133,
 };
 
 /** Echte Fotos aus dem Studio Prenzlauer Berg (Quelle: Treatwell-Salonprofil). */
