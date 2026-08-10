@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { business, locations } from "@/content/business";
 import { navItems } from "./Header";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
@@ -8,7 +9,14 @@ export function Footer() {
       <div className="shell py-16 md:py-24">
         <div className="grid gap-14 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <p className="font-display text-4xl text-background md:text-5xl">{business.name}</p>
+            <img
+              src={logo}
+              alt={`${business.name} Logo`}
+              width={512}
+              height={512}
+              className="h-14 w-14"
+            />
+            <p className="font-display mt-5 text-4xl text-background md:text-5xl">{business.name}</p>
             <p className="eyebrow mt-3 !text-background/55">{business.tagline}</p>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-background/70">
               Zwei Studios für Nägel, Wimpern und Augenbrauen. Wir sprechen{" "}
