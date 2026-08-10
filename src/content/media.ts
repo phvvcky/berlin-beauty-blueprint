@@ -68,22 +68,19 @@ export const studioImages: GalleryImage[] = [
 ];
 
 export const gallery: GalleryImage[] = [
+  { src: nailsReal01, alt: "Babyboomer-Modellage in Rosé-Nude, langes Coffin-Design von Angel Nails", width: 1200, height: 2133, caption: "Modellage · Babyboomer" },
   { src: studioReal01, alt: "Heller Salonraum von Angel Nails Prenzlauer Berg mit weißen Maniküre-Arbeitsplätzen", width: 1080, height: 720, caption: "Studio Prenzlauer Berg" },
-  { src: work01, alt: "Milchig-weiße Gelnägel in ovaler Form", width: 900, height: 1200, caption: "Gel · Milky White" },
-  { src: work02, alt: "Nahaufnahme eines Auges mit Wimpernverlängerung in Volumentechnik", width: 1200, height: 900, caption: "Wimpern · Volumen" },
+  { src: nailsReal02, alt: "Zwei Hände mit rosé-nude Modellage und Visitenkarte von Angel Nails", width: 1200, height: 1600, caption: "Maniküre · Nude Rosé" },
   { src: studioReal02, alt: "Blick durch den Studioraum von Angel Nails mit Marmorboden und goldenen Absperrungen", width: 1080, height: 720, caption: "Salonraum" },
-  { src: work03, alt: "Hände mit dunkelbrauner Farbgel-Maniküre halten eine Tasse", width: 900, height: 1200, caption: "Farbgel · Espresso" },
-  { src: work04, alt: "Detailaufnahme glänzender Nägel in warmem Nude-Ton", width: 900, height: 1200, caption: "Maniküre · Nude" },
+  { src: nailsReal03, alt: "French-Modellage mit rosa Herz-Nailart von Angel Nails", width: 1200, height: 1600, caption: "Nailart · Herz French" },
+  { src: studioSign, alt: "Angel Nails Schriftzug mit Flügel-Logo im Studio Prenzlauer Berg", width: 1200, height: 1600, caption: "Angel Nails" },
   { src: studioReal03, alt: "Arbeitsplätze mit Lampen und Spiegeln im Studio Angel Nails Prenzlauer Berg", width: 1080, height: 720, caption: "Arbeitsplätze" },
   { src: work05, alt: "Pflegeprodukte und Handtuch als Sinnbild für Pediküre und Fußpflege", width: 1200, height: 900, caption: "Pediküre · Pflege" },
-  { src: work06, alt: "Lange Stiletto-Nägel in dunklem Espressobraun mit Hochglanz", width: 900, height: 1200, caption: "Modellage · Stiletto" },
   { src: studioFront, alt: "Eingang und Schaufenster von Angel Nails in der Danziger Straße 142 in Berlin", width: 1080, height: 720, caption: "Danziger Straße 142" },
-  { src: work07, alt: "Hände mit zartem Flieder-Farbgel auf Marmor", width: 900, height: 1200, caption: "Farbgel · Lilac" },
-  { src: work08, alt: "Nageldesignerin arbeitet konzentriert an der Maniküre einer Kundin", width: 1000, height: 1000, caption: "Im Studio" },
 ];
 
 /** Auswahl für die Startseite */
-export const featuredGallery = gallery.slice(0, 5);
+export const featuredGallery = [gallery[0]!, gallery[1]!, gallery[2]!, gallery[4]!, gallery[5]!];
 /** Auswahl für die Instagram-Sektion (nur Arbeiten, keine Raumfotos) */
-export const instagramGallery = [gallery[1]!, gallery[2]!, gallery[5]!, gallery[8]!];
+export const instagramGallery = [gallery[0]!, gallery[2]!, gallery[4]!, gallery[5]!];
 
