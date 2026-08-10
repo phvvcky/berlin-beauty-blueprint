@@ -1,13 +1,13 @@
 /**
- * BILDER — zum Austauschen einfach die Dateien in src/assets/ ersetzen
- * (gleicher Dateiname) oder hier neue Importe eintragen.
+ * BILDER — ausschließlich echte Fotos von Angel Nails.
  *
- * ECHTE FOTOS EINPFLEGEN:
- * 1. Originalfotos (Instagram/Google Business) als .jpg nach src/assets/ legen
- *    – z. B. work-01.jpg … work-08.jpg, studio-01.jpg, hero.jpg überschreiben.
- * 2. Alt-Text, width und height im jeweiligen Eintrag unten anpassen.
+ * Quellen: myangelnails.de (Arbeiten, Studio-Schriftzug) und das
+ * Treatwell-Salonprofil Prenzlauer Berg (Salonräume, Ladenfront).
+ *
+ * NEUE FOTOS EINPFLEGEN:
+ * 1. Datei nach src/assets/ legen und hier importieren.
+ * 2. Alt-Text, width und height im jeweiligen Eintrag anpassen.
  * 3. Reihenfolge/Auswahl steuern `featuredGallery` und `instagramGallery`.
- * Aktuell: hochwertige Platzhalter-Motive, keine Originalfotos von Angel Nails.
  */
 
 
