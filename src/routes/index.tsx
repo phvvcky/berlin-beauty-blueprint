@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Hero } from "@/components/site/Hero";
 import { FeaturedGallery } from "@/components/site/GalleryGrid";
 import { ReviewsSection } from "@/components/site/ReviewsSection";
+import { TeamGrid } from "@/components/site/TeamGrid";
 import { LocationCard } from "@/components/site/LocationCard";
 import { InstagramSection } from "@/components/site/InstagramSection";
 import { BookingCTA } from "@/components/site/BookingCTA";
@@ -145,6 +146,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <TeamGrid eyebrow="Team" title="Wer dich behandelt" />
 
       <ReviewsSection />
 
