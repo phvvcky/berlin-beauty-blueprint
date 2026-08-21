@@ -45,9 +45,7 @@ function TeamPage() {
                 </li>
               ))}
               <li className="border-b pb-2">{business.payment}</li>
-              <li className="border-b pb-2">
-                Sprachen: {business.languages.join(" · ")}
-              </li>
+              <li className="border-b pb-2">Sprachen: {business.languages.join(" · ")}</li>
             </ul>
           </div>
         </div>

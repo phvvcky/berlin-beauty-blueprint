@@ -80,8 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Angel Nails — Nagelstudio & Wimpern in Berlin" },
       {
         name: "description",
-        content:
-          "Angel Nails — Nagel- und Beautystudio in Berlin Prenzlauer Berg und Hennigsdorf.",
+        content: "Angel Nails — Nagel- und Beautystudio in Berlin Prenzlauer Berg und Hennigsdorf.",
       },
       { property: "og:site_name", content: "Angel Nails" },
       { property: "og:type", content: "website" },

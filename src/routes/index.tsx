@@ -41,8 +41,6 @@ function Home() {
 
       <GoogleRatingSection />
 
-
-
       {/* Intro / Trust */}
       <section className="section">
         <div className="shell grid gap-10 md:grid-cols-12 md:gap-16">
@@ -54,8 +52,8 @@ function Home() {
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
               Angel Nails ist ein familiär geführtes Nagel- und Beautystudio mit zwei Standorten in
               Berlin und Brandenburg. Unser Team arbeitet mit modernen Techniken an Nägeln, Händen,
-              Füßen und Wimpern — mit hohem Anspruch an Hygiene und Ergebnis. Viele Kundinnen
-              kommen seit Jahren zu uns.
+              Füßen und Wimpern — mit hohem Anspruch an Hygiene und Ergebnis. Viele Kundinnen kommen
+              seit Jahren zu uns.
             </p>
             <ul className="mt-10 grid gap-px border-t sm:grid-cols-3">
               <li className="border-b py-5 sm:border-b-0 sm:pr-6">

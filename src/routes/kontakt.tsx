@@ -14,9 +14,7 @@ const description =
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     ...pageMeta({ title, description, path: "/kontakt" }),
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(localBusinessSchema()) },
-    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(localBusinessSchema()) }],
   }),
   component: Kontakt,
 });
@@ -31,8 +29,6 @@ function Kontakt() {
       />
 
       <GoogleRatingSection />
-
-
 
       <section className="shell grid gap-14 border-t pt-12 pb-16 md:grid-cols-2 md:gap-16 md:pb-24">
         {locations.map((loc) => (

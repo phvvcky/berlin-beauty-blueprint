@@ -49,7 +49,6 @@ function Studio() {
             Team kennenlernen
           </Link>
 
-
           <h2 className="display-md mt-14">Gut zu wissen</h2>
           <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
             {business.amenities.map((item) => (

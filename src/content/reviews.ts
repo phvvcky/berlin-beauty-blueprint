@@ -9,8 +9,7 @@ export const ratingSummary = {
   scoreValue: 4.8,
   count: 677,
   source: "Treatwell",
-  sourceUrl:
-    "https://www.treatwell.de/ort/angel-nails-nagelstudio-lashes-berlin-prenzlauer-berg/",
+  sourceUrl: "https://www.treatwell.de/ort/angel-nails-nagelstudio-lashes-berlin-prenzlauer-berg/",
   location: "Studio Prenzlauer Berg",
 };
 
@@ -31,15 +30,20 @@ export const googleRating = {
     "https://www.google.com/maps/search/?api=1&query=Angel%20Nails%20Nagelstudio%20Danziger%20Stra%C3%9Fe%20142%20Berlin",
 };
 
-
 export type Review = {
   text: string;
   author: string;
   treatment: string;
   stylist?: string;
   source: string;
+  locationId: string;
 };
 
+/**
+ * TODO: Bewertungen für Hennigsdorf sind noch nicht verifiziert/eingepflegt —
+ * bitte NICHT mit erfundenen Bewertungen auffüllen, sondern echte Treatwell-
+ * Bewertungen ergänzen sobald verfügbar (locationId: "hennigsdorf").
+ */
 export const reviews: Review[] = [
   {
     text: "Wieder eine hervorragende Arbeit. Hält gute 4 Wochen und länger.",
@@ -47,6 +51,7 @@ export const reviews: Review[] = [
     treatment: "Wimpernverlängerung",
     stylist: "Hang",
     source: "Verifizierte Bewertung · Treatwell",
+    locationId: "prenzlauer-berg",
   },
   {
     text: "Ich gehe seit 5 Jahren zu Angel Nails, um meine Wimpern sowie meine Nägel machen zu lassen, und ich bin jedes Mal super happy mit dem Ergebnis.",
@@ -54,6 +59,7 @@ export const reviews: Review[] = [
     treatment: "Wimpernverlängerung",
     stylist: "Nhi",
     source: "Verifizierte Bewertung · Treatwell",
+    locationId: "prenzlauer-berg",
   },
   {
     text: "Alles super gelaufen, freundlich wie immer und gute Arbeit — vielen Dank.",
@@ -61,6 +67,7 @@ export const reviews: Review[] = [
     treatment: "Wimpernverlängerung",
     stylist: "Hang",
     source: "Verifizierte Bewertung · Treatwell",
+    locationId: "prenzlauer-berg",
   },
   {
     text: "Alles super gewesen, vielen lieben Dank.",
@@ -68,6 +75,7 @@ export const reviews: Review[] = [
     treatment: "Wimpernverlängerung",
     stylist: "Hang",
     source: "Verifizierte Bewertung · Treatwell",
+    locationId: "prenzlauer-berg",
   },
 ];
 

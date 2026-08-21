@@ -1,6 +1,10 @@
 import { ratingSummary, reviews } from "@/content/reviews";
+import { useLocation } from "@/lib/location-context";
 
 export function ReviewsSection() {
+  const { location } = useLocation();
+  const locationReviews = reviews.filter((r) => r.locationId === location.id);
+
   return (
     <section className="section bg-secondary">
       <div className="shell">
@@ -28,20 +32,27 @@ export function ReviewsSection() {
           </p>
         </div>
 
-        <ul className="mt-14 grid gap-px border-t md:grid-cols-3">
-          {reviews.map((review) => (
-            <li key={review.author} className="border-b py-8 md:border-b-0 md:pr-8">
-              <blockquote className="font-display text-2xl leading-snug md:text-[1.6rem]">
-                „{review.text}“
-              </blockquote>
-              <footer className="mt-6 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                <span className="text-foreground">{review.author}</span> · {review.treatment}
-                {review.stylist ? ` · bei ${review.stylist}` : ""}
-                <span className="mt-2 block normal-case tracking-normal">{review.source}</span>
-              </footer>
-            </li>
-          ))}
-        </ul>
+        {locationReviews.length === 0 ? (
+          <p className="mt-10 max-w-md text-sm leading-relaxed text-muted-foreground">
+            Für {location.name} sind noch keine einzelnen Bewertungen hinterlegt. Die
+            Gesamtbewertung oben bezieht sich aktuell auf {ratingSummary.location}.
+          </p>
+        ) : (
+          <ul className="mt-14 grid gap-px border-t md:grid-cols-3">
+            {locationReviews.map((review) => (
+              <li key={review.author} className="border-b py-8 md:border-b-0 md:pr-8">
+                <blockquote className="font-display text-2xl leading-snug md:text-[1.6rem]">
+                  „{review.text}“
+                </blockquote>
+                <footer className="mt-6 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  <span className="text-foreground">{review.author}</span> · {review.treatment}
+                  {review.stylist ? ` · bei ${review.stylist}` : ""}
+                  <span className="mt-2 block normal-case tracking-normal">{review.source}</span>
+                </footer>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   );

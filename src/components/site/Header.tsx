@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { business, cta, booking } from "@/content/business";
 import { ActionLink } from "./ActionLink";
+import { LocationSwitcher } from "./LocationSwitcher";
 import logo from "@/assets/logo.png";
 
 export const navItems = [
@@ -34,9 +35,15 @@ export function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled || open ? "bg-background/95 backdrop-blur-sm border-b" : "border-b border-transparent"
+        scrolled || open
+          ? "bg-background/95 backdrop-blur-sm border-b"
+          : "border-b border-transparent"
       }`}
     >
+      <div className="shell flex h-10 items-center justify-end border-b border-black/5">
+        <LocationSwitcher />
+      </div>
+
       <div className="shell flex h-[70px] items-center justify-between md:h-[86px]">
         <Link to="/" className="flex items-center gap-3" aria-label={`${business.name} Startseite`}>
           <img

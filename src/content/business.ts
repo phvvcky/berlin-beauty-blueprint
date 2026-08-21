@@ -20,6 +20,23 @@ export type Location = {
   addressLocality: string;
   phone: string;
   phoneHref: string;
+  /**
+   * Messenger-Kontakte für diesen Standort.
+   * TODO: aktuell = Studio-Festnetznummer im internationalen Format.
+   * Falls es eigene WhatsApp/Viber-Geschäftsnummern gibt, hier ersetzen.
+   */
+  messengers: {
+    /** E.164-Format ohne "+", z.B. "493042020652" */
+    whatsapp: string;
+    /** E.164-Format mit "+", z.B. "+493042020652" */
+    viber: string;
+    /**
+     * LINE hat keinen universellen Telefon-Deeplink wie WhatsApp/Viber.
+     * TODO: echte LINE-ID eintragen (z.B. "@angelnails"), sonst bleibt der
+     * LINE-Button ausgeblendet.
+     */
+    lineId?: string;
+  };
   mapsUrl: string;
   bookingUrl: string;
   geo: { lat: number; lng: number };
@@ -68,6 +85,11 @@ export const locations: Location[] = [
     addressLocality: "Berlin",
     phone: "030 42020652",
     phoneHref: "tel:+493042020652",
+    messengers: {
+      whatsapp: "493042020652",
+      viber: "+493042020652",
+      // TODO: echte LINE-ID eintragen, z.B. "@angelnails-pberg" — Feld einfach ergänzen, dann erscheint der Button automatisch
+    },
     mapsUrl:
       "https://www.google.com/maps/place/Angel+Nails+Nagelstudio+Berlin+Prenzlauer+Berg/@52.5345841,13.4331239,17z",
     bookingUrl:
@@ -91,8 +113,12 @@ export const locations: Location[] = [
     addressLocality: "Hennigsdorf",
     phone: "03302 4949729",
     phoneHref: "tel:+4933024949729",
-    mapsUrl:
-      "https://www.google.com/maps/place/Angel+Nails+Nagelstudio/@52.63717,13.2001952,17z",
+    messengers: {
+      whatsapp: "4933024949729",
+      viber: "+4933024949729",
+      // TODO: echte LINE-ID eintragen, z.B. "@angelnails-hennigsdorf" — Feld einfach ergänzen, dann erscheint der Button automatisch
+    },
+    mapsUrl: "https://www.google.com/maps/place/Angel+Nails+Nagelstudio/@52.63717,13.2001952,17z",
     bookingUrl: "https://buchung.treatwell.de/ort/angel-nails-nagelstudio-lashes-hennigsdorf/",
     geo: { lat: 52.63717, lng: 13.2027701 },
     hours: [
@@ -110,29 +136,44 @@ export const booking = {
   /** Wimpern & Augenbrauen sind online über Treatwell buchbar. */
   onlineLabel: "Wimpern & Augenbrauen online buchen",
   /** Für Nägel & Füße wird laut myangelnails.de per Terminanfrage/Telefon gebucht. */
-  nailsNote:
-    "Termine für Nägel und Füße bitte telefonisch im gewünschten Studio anfragen.",
+  nailsNote: "Termine für Nägel und Füße bitte telefonisch im gewünschten Studio anfragen.",
   defaultUrl:
     "https://buchung.treatwell.de/ort/angel-nails-nagelstudio-lashes-berlin-prenzlauer-berg/",
-
 } as const;
 
-import teamNhi from "@/assets/team-nhi.png";
-import teamHang from "@/assets/team-hang.png";
-import teamLoan from "@/assets/team-loan.png";
-import teamHana from "@/assets/team-hana.png";
+import teamNhi from "@/assets/team-nhi.webp";
+import teamHang from "@/assets/team-hang.webp";
+import teamLoan from "@/assets/team-loan.webp";
+import teamHana from "@/assets/team-hana.webp";
+
+export type TeamMember = {
+  name: string;
+  rating: string;
+  reviews: number;
+  portrait: string;
+  locationId: string;
+};
 
 export const team = {
-  /** Quelle: Treatwell Salonprofil Prenzlauer Berg */
+  /**
+   * Quelle: Treatwell Salonprofil Prenzlauer Berg.
+   * TODO: Team für Hennigsdorf ist noch nicht verifiziert/eingepflegt —
+   * bitte NICHT mit Platzhalterdaten auffüllen, sondern echte Namen/Fotos
+   * ergänzen sobald verfügbar (locationId: "hennigsdorf").
+   */
   members: [
-    { name: "Nhi", rating: "4,9", reviews: 194, portrait: teamNhi },
-    { name: "Hang", rating: "4,8", reviews: 145, portrait: teamHang },
-    { name: "Loan", rating: "4,8", reviews: 87, portrait: teamLoan },
-    { name: "Hana", rating: "4,7", reviews: 46, portrait: teamHana },
-  ],
+    { name: "Nhi", rating: "4,9", reviews: 194, portrait: teamNhi, locationId: "prenzlauer-berg" },
+    {
+      name: "Hang",
+      rating: "4,8",
+      reviews: 145,
+      portrait: teamHang,
+      locationId: "prenzlauer-berg",
+    },
+    { name: "Loan", rating: "4,8", reviews: 87, portrait: teamLoan, locationId: "prenzlauer-berg" },
+    { name: "Hana", rating: "4,7", reviews: 46, portrait: teamHana, locationId: "prenzlauer-berg" },
+  ] satisfies TeamMember[],
   source: "Treatwell",
   /** Die Porträts sind gezeichnete Illustrationen, keine Fotos. */
-  portraitNote:
-    "Die Porträts sind gezeichnete Illustrationen im Karikatur-Stil — keine Fotos.",
+  portraitNote: "Die Porträts sind gezeichnete Illustrationen im Karikatur-Stil — keine Fotos.",
 } as const;
-

@@ -1,9 +1,11 @@
 import { team } from "@/content/business";
+import { useLocation } from "@/lib/location-context";
 import { SectionHeading } from "./SectionHeading";
 
 /**
  * TEAM — gezeichnete Karikatur-Porträts (Illustrationen, keine Fotos).
  * Austauschbar über `team.members[].portrait` in src/content/business.ts.
+ * Zeigt nur Mitglieder des aktuell gewählten Standorts (LocationSwitcher).
  */
 export function TeamGrid({
   eyebrow = "Team",
@@ -12,12 +14,27 @@ export function TeamGrid({
   eyebrow?: string;
   title?: string;
 }) {
+  const { location } = useLocation();
+  const members = team.members.filter((m) => m.locationId === location.id);
+
+  if (members.length === 0) {
+    return (
+      <section className="shell pb-16 md:pb-24">
+        <SectionHeading eyebrow={eyebrow} title={title} />
+        <p className="mt-8 max-w-md text-sm leading-relaxed text-muted-foreground">
+          Für {location.name} sind noch keine Team-Profile hinterlegt. Ruf uns gern direkt an oder
+          schreib uns über WhatsApp — wir sagen dir, wer dich betreut.
+        </p>
+      </section>
+    );
+  }
+
   return (
     <section className="shell pb-16 md:pb-24">
       <SectionHeading eyebrow={eyebrow} title={title} />
 
       <ul className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-        {team.members.map((member) => (
+        {members.map((member) => (
           <li key={member.name} className="group">
             <div className="overflow-hidden rounded-[999px_999px_28px_28px] bg-secondary">
               <img
@@ -39,7 +56,7 @@ export function TeamGrid({
       </ul>
 
       <p className="mt-8 max-w-xl text-xs leading-relaxed text-muted-foreground">
-        {team.portraitNote} Bewertungen je Stylistin laut {team.source}-Profil Prenzlauer Berg.
+        {team.portraitNote} Bewertungen je Stylistin laut {team.source}-Profil {location.name}.
       </p>
     </section>
   );

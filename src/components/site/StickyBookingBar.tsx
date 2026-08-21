@@ -1,14 +1,17 @@
-import { booking, business, cta, locations } from "@/content/business";
+import { booking, business, cta } from "@/content/business";
+import { useLocation } from "@/lib/location-context";
 
 /** Mobile-only sticky conversion bar. */
 export function StickyBookingBar() {
+  const { location } = useLocation();
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t bg-background/95 backdrop-blur-sm lg:hidden">
       <div className="flex items-stretch gap-2 px-3 py-3">
         <a
-          href={locations[0]!.phoneHref}
+          href={location.phoneHref}
           className="btn-base btn-outline !px-3 !text-[0.65rem]"
-          aria-label="Studio Prenzlauer Berg anrufen"
+          aria-label={`${location.name} anrufen`}
         >
           Anrufen
         </a>
@@ -33,4 +36,3 @@ export function StickyBookingBar() {
     </div>
   );
 }
-

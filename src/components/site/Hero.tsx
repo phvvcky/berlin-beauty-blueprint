@@ -33,7 +33,10 @@ export function Hero() {
           <div className="mt-10 flex flex-col gap-2 text-sm text-muted-foreground">
             <p>
               <span className="font-display text-2xl text-foreground">{googleRating.score}</span>{" "}
-              <span aria-hidden className="text-clay">★★★★★</span> · {googleRating.countLabel}{" "}
+              <span aria-hidden className="text-clay">
+                ★★★★★
+              </span>{" "}
+              · {googleRating.countLabel}{" "}
               <a
                 href={googleRating.reviewsUrl}
                 target="_blank"
@@ -55,7 +58,6 @@ export function Hero() {
               </a>
             </p>
           </div>
-
         </div>
 
         <div className="md:col-span-5 lg:col-span-6">
