@@ -5,63 +5,15 @@ import { ActionLink } from "./ActionLink";
 
 export function Hero() {
   return (
-    <section className="relative">
-      <div className="shell grid items-end gap-8 pt-10 pb-8 md:grid-cols-12 md:gap-10 md:pt-16 md:pb-16">
-        <div className="md:col-span-7 lg:col-span-6">
-          <p className="eyebrow">
-            {business.tagline} · {business.city} & Hennigsdorf
-          </p>
-          <h1 className="display-xl mt-6">
-            Angel
-            <br />
-            <span className="italic text-clay">Nails</span>
-          </h1>
-          <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-            Nägel, Wimpern und Augenbrauen mit ruhiger Hand und Blick fürs Detail — an zwei
-            Standorten in Berlin Prenzlauer Berg und Hennigsdorf.
-          </p>
+    <section className="relative overflow-hidden">
+      <div className="shell flex flex-col items-center pt-8 pb-14 text-center md:pt-14 md:pb-24">
+        <p className="eyebrow">
+          {business.tagline} · {business.city} & Hennigsdorf
+        </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <ActionLink href={booking.defaultUrl} external variant="primary">
-              {cta.book}
-            </ActionLink>
-            <ActionLink to="/leistungen" variant="outline">
-              {cta.services}
-            </ActionLink>
-          </div>
-
-          <div className="mt-10 flex flex-col gap-2 text-sm text-muted-foreground">
-            <p>
-              <span className="font-display text-2xl text-foreground">{googleRating.score}</span>{" "}
-              <span aria-hidden className="text-clay">
-                ★★★★★
-              </span>{" "}
-              · {googleRating.countLabel}{" "}
-              <a
-                href={googleRating.reviewsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline"
-              >
-                Google Bewertungen
-              </a>
-            </p>
-            <p>
-              {ratingSummary.score} aus {ratingSummary.count} Bewertungen ·{" "}
-              <a
-                href={ratingSummary.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline"
-              >
-                {ratingSummary.source}
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div className="md:col-span-5 lg:col-span-6">
-          <div className="zoom-media aspect-[4/5] md:aspect-[3/4]">
+        {/* Arch visual with floating trust badge */}
+        <div className="relative mt-8 w-full max-w-[26rem] md:mt-10 md:max-w-[30rem]">
+          <div className="zoom-media aspect-[4/5] w-full rounded-t-full shadow-[var(--shadow-lift)]">
             <img
               src={heroImage.src}
               alt={heroImage.alt}
@@ -71,7 +23,61 @@ export function Hero() {
               className="img-cover"
             />
           </div>
+
+          <div className="absolute -bottom-5 right-2 flex items-center gap-2 rounded-full border border-accent/15 bg-card/95 px-4 py-3 shadow-[var(--shadow-soft)] backdrop-blur-sm md:right-0">
+            <span aria-hidden className="text-[0.65rem] text-clay">
+              ★★★★★
+            </span>
+            <span className="text-[0.65rem] uppercase tracking-[0.14em]">
+              {googleRating.score}{" "}
+              <span className="text-muted-foreground">| {googleRating.countLabel} Google</span>
+            </span>
+          </div>
         </div>
+
+        <h1 className="display-xl mt-16 !text-[clamp(2.5rem,7vw,5rem)]">
+          Angel Nails —<br />
+          <span className="italic text-clay">Nägel & Wimpern in Berlin</span>
+        </h1>
+
+        <p className="mt-6 max-w-md text-xs uppercase leading-relaxed tracking-[0.14em] text-muted-foreground">
+          Präzise Handarbeit an zwei Standorten — Prenzlauer Berg & Hennigsdorf.
+        </p>
+
+        <div className="mt-9 flex w-full max-w-sm flex-col gap-3">
+          <ActionLink href={booking.defaultUrl} external variant="primary" className="w-full">
+            {cta.book}
+          </ActionLink>
+          <ActionLink to="/leistungen" variant="outline" className="w-full">
+            {cta.services}
+          </ActionLink>
+        </div>
+
+        <p className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+          <a
+            href={googleRating.reviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline"
+          >
+            Google Bewertungen
+          </a>
+          <span aria-hidden>·</span>
+          <a
+            href={ratingSummary.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-underline"
+          >
+            {ratingSummary.score} aus {ratingSummary.count} · {ratingSummary.source}
+          </a>
+        </p>
+
+        <p className="mt-8 flex items-center justify-center gap-4 text-[0.65rem] uppercase tracking-[0.24em] text-muted-foreground/70">
+          <span>Prenzlauer Berg</span>
+          <span aria-hidden>•</span>
+          <span>Hennigsdorf</span>
+        </p>
       </div>
     </section>
   );
