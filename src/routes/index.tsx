@@ -91,7 +91,7 @@ function Home() {
                 className="img-cover"
               />
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
