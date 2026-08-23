@@ -29,7 +29,15 @@ export function InstagramSection() {
         </Reveal>
 
         {instagramPosts.length > 0 && (
-          <div className="mt-10 grid gap-6 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            className={`mt-10 grid gap-6 md:mt-12 ${
+              instagramPosts.length === 1
+                ? "max-w-md"
+                : instagramPosts.length === 2
+                  ? "md:grid-cols-2"
+                  : "md:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
             {instagramPosts.map((permalink, i) => (
               <Reveal key={permalink} delay={i * 110} className="overflow-hidden bg-card">
                 <iframe
