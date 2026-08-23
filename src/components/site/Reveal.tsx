@@ -24,7 +24,7 @@ export function Reveal({
   as?: ElementType;
   variant?: RevealVariant;
   delay?: number;
-  className?: string;
+  className?: string | undefined;
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
