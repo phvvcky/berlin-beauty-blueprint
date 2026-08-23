@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Hero } from "@/components/site/Hero";
 import { FeaturedGallery } from "@/components/site/GalleryGrid";
-import { ReviewsSection } from "@/components/site/ReviewsSection";
+import { TestimonialCarousel } from "@/components/site/TestimonialCarousel";
+import { BeforeAfterSection } from "@/components/site/BeforeAfterSection";
 import { TeamGrid } from "@/components/site/TeamGrid";
 import { LocationCard } from "@/components/site/LocationCard";
 import { InstagramSection } from "@/components/site/InstagramSection";
@@ -145,9 +146,11 @@ function Home() {
         </div>
       </section>
 
+      <BeforeAfterSection />
+
       <TeamGrid eyebrow="Team" title="Wer dich behandelt" />
 
-      <ReviewsSection />
+      <TestimonialCarousel />
 
       {/* Locations */}
       <section className="section">

@@ -135,3 +135,54 @@ export const gallery: GalleryImage[] = [
 export const featuredGallery = [gallery[0]!, gallery[1]!, gallery[2]!, gallery[4]!, gallery[5]!];
 /** Auswahl für die Instagram-Sektion (nur Arbeiten, keine Raumfotos) */
 export const instagramGallery = [gallery[0]!, gallery[2]!, gallery[4]!, gallery[5]!];
+
+/**
+ * VORHER / NACHHER
+ * Aktuell mit echten Angel-Nails-Fotos bestückt. Sobald echte Vorher-Aufnahmen
+ * vorliegen, einfach `before.src` austauschen — Layout bleibt gleich.
+ */
+export type BeforeAfterPair = {
+  id: string;
+  title: string;
+  meta: string;
+  before: GalleryImage;
+  after: GalleryImage;
+};
+
+export const beforeAfterPairs: BeforeAfterPair[] = [
+  {
+    id: "modellage",
+    title: "Neumodellage",
+    meta: "Babyboomer · ca. 90 Min.",
+    before: {
+      src: nailsReal02,
+      alt: "Hände vor der Modellage bei Angel Nails",
+      width: 1200,
+      height: 1600,
+    },
+    after: {
+      src: nailsReal01,
+      alt: "Hand mit fertiger Babyboomer-Modellage in Rosé-Nude von Angel Nails",
+      width: 1200,
+      height: 2133,
+    },
+  },
+  {
+    id: "nailart",
+    title: "Nailart French",
+    meta: "Herz-Design · ca. 120 Min.",
+    before: {
+      src: nailsReal01,
+      alt: "Nägel in Rosé-Nude vor dem neuen Nailart-Design",
+      width: 1200,
+      height: 2133,
+    },
+    after: {
+      src: nailsReal03,
+      alt: "French-Modellage mit rosa Herz-Nailart von Angel Nails",
+      width: 1200,
+      height: 1600,
+    },
+  },
+];
+
