@@ -73,7 +73,7 @@ export function RevealStagger({
   children: ReactNode[];
   step?: number;
   variant?: RevealVariant;
-  className?: string;
+  className?: string | undefined;
 }) {
   return (
     <>
