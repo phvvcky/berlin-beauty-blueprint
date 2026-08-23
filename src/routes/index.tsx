@@ -10,6 +10,7 @@ import { InstagramSection } from "@/components/site/InstagramSection";
 import { BookingCTA } from "@/components/site/BookingCTA";
 import { GoogleRatingSection } from "@/components/site/GoogleRatingSection";
 import { ActionLink } from "@/components/site/ActionLink";
+import { Reveal } from "@/components/site/Reveal";
 import { business, locations } from "@/content/business";
 import { googleRating } from "@/content/reviews";
 import { serviceCategories, featuredCategoryIds } from "@/content/services";
@@ -45,7 +46,7 @@ function Home() {
       {/* Intro / Trust */}
       <section className="section">
         <div className="shell grid gap-10 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-7">
+          <Reveal className="md:col-span-7">
             <p className="eyebrow">Studio</p>
             <p className="display-md mt-5">
               Präzise Arbeit, ehrliche Beratung und Zeit für das, was dir gefällt.
@@ -77,8 +78,8 @@ function Home() {
                 </p>
               </li>
             </ul>
-          </div>
-          <div className="md:col-span-5">
+          </Reveal>
+          <Reveal variant="mask" delay={120} className="md:col-span-5">
             <div className="zoom-media aspect-[4/5]">
               <img
                 src={studioImages[0]!.src}
@@ -90,14 +91,14 @@ function Home() {
                 className="img-cover"
               />
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Services */}
       <section className="section bg-secondary">
         <div className="shell">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">Leistungen</p>
               <h2 className="display-lg mt-4">Was wir machen</h2>
@@ -105,11 +106,16 @@ function Home() {
             <ActionLink to="/leistungen" variant="outline" className="self-start">
               Alle Leistungen & Preise
             </ActionLink>
-          </div>
+          </Reveal>
 
           <ul className="mt-14 grid gap-px border-t sm:grid-cols-2">
             {featured.map((cat, i) => (
-              <li key={cat.id} className="border-b py-8 sm:odd:pr-10 sm:even:pl-10">
+              <Reveal
+                as="li"
+                key={cat.id}
+                delay={i * 90}
+                className="border-b py-8 sm:odd:pr-10 sm:even:pl-10"
+              >
                 <p className="eyebrow">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="display-md mt-3">
                   <Link to="/leistungen" hash={cat.id} className="link-underline">
@@ -122,7 +128,7 @@ function Home() {
                 <p className="mt-5 text-xs uppercase tracking-[0.18em] text-muted-foreground">
                   {cat.services[0]?.price ?? "Preis auf Anfrage"}
                 </p>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>
@@ -131,7 +137,7 @@ function Home() {
       {/* Featured work */}
       <section className="section">
         <div className="shell">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">Arbeiten</p>
               <h2 className="display-lg mt-4">Ausgewählte Sets</h2>
@@ -139,10 +145,10 @@ function Home() {
             <ActionLink to="/galerie" variant="outline" className="self-start">
               Galerie ansehen
             </ActionLink>
-          </div>
-          <div className="mt-12">
+          </Reveal>
+          <Reveal variant="mask" delay={120} className="mt-12">
             <FeaturedGallery images={featuredGallery} />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -155,11 +161,15 @@ function Home() {
       {/* Locations */}
       <section className="section">
         <div className="shell">
-          <p className="eyebrow">Standorte</p>
-          <h2 className="display-lg mt-4">Zwei Studios</h2>
+          <Reveal>
+            <p className="eyebrow">Standorte</p>
+            <h2 className="display-lg mt-4">Zwei Studios</h2>
+          </Reveal>
           <div className="mt-14 grid gap-14 border-t pt-12 md:grid-cols-2 md:gap-16">
-            {locations.map((loc) => (
-              <LocationCard key={loc.id} location={loc} />
+            {locations.map((loc, i) => (
+              <Reveal key={loc.id} delay={i * 120}>
+                <LocationCard location={loc} />
+              </Reveal>
             ))}
           </div>
         </div>

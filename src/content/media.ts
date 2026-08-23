@@ -186,3 +186,15 @@ export const beforeAfterPairs: BeforeAfterPair[] = [
   },
 ];
 
+
+/**
+ * ECHTER INSTAGRAM-FEED
+ * Öffentliche Post-Permalinks von @angel_nails_nagelstudio. Instagram rendert
+ * diese Beiträge live als offizielles Embed (Bild, Caption, Likes bleiben aktuell).
+ *
+ * NEUE POSTS EINPFLEGEN: Beitrag auf Instagram öffnen, URL kopieren
+ * (https://www.instagram.com/p/XXXX/ oder /reel/XXXX/) und hier ergänzen.
+ */
+export const instagramPosts: string[] = [
+  "https://www.instagram.com/reel/DMP77MZi14X/",
+];

@@ -1,14 +1,19 @@
 import { business, cta } from "@/content/business";
-import { instagramGallery } from "@/content/media";
+import { instagramGallery, instagramPosts } from "@/content/media";
+import { Reveal } from "./Reveal";
 
-/** Instagram-Feed als endlose Laufband-Galerie (Studio-358-Anmutung). */
+function embedUrl(permalink: string) {
+  return `${permalink.replace(/\/+$/, "")}/embed/captioned/`;
+}
+
+/** Echter Instagram-Feed (offizielle Embeds) + Laufband mit Studio-Arbeiten. */
 export function InstagramSection() {
   const strip = [...instagramGallery, ...instagramGallery];
 
   return (
     <section className="section overflow-hidden">
       <div className="shell">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="eyebrow">Instagram</p>
             <h2 className="display-lg mt-4">{business.instagramHandle}</h2>
@@ -21,7 +26,32 @@ export function InstagramSection() {
           >
             {cta.instagram}
           </a>
-        </div>
+        </Reveal>
+
+        {instagramPosts.length > 0 && (
+          <div
+            className={`mt-10 grid gap-6 md:mt-12 ${
+              instagramPosts.length === 1
+                ? "max-w-md"
+                : instagramPosts.length === 2
+                  ? "md:grid-cols-2"
+                  : "md:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
+            {instagramPosts.map((permalink, i) => (
+              <Reveal key={permalink} delay={i * 110} className="overflow-hidden bg-card">
+                <iframe
+                  src={embedUrl(permalink)}
+                  title={`Instagram-Beitrag von ${business.instagramHandle}`}
+                  loading="lazy"
+                  scrolling="no"
+                  allowFullScreen
+                  className="h-[620px] w-full border-0"
+                />
+              </Reveal>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="marquee mt-12 py-2">
@@ -50,7 +80,7 @@ export function InstagramSection() {
 
       <div className="shell">
         <p className="mt-6 text-xs text-muted-foreground">
-          Auswahl an echten Arbeiten — kein Live-Feed. Aktuelle Sets findest du auf Instagram.
+          Live-Beiträge direkt von Instagram, darunter eine Auswahl echter Arbeiten aus dem Studio.
         </p>
       </div>
     </section>
